@@ -24,3 +24,9 @@ C:\Users\linti\Documents\Projects\GameStore\GameStore\obj\Debug\net8.0\refint\Ga
 C:\Users\linti\Documents\Projects\GameStore\GameStore\obj\Debug\net8.0\GameStore.pdb
 C:\Users\linti\Documents\Projects\GameStore\GameStore\obj\Debug\net8.0\GameStore.genruntimeconfig.cache
 C:\Users\linti\Documents\Projects\GameStore\GameStore\obj\Debug\net8.0\ref\GameStore.dll
+c:\Users\linti\Documents\Projects\GameStore\GameStore\bin\Debug\net8.0\Microsoft.OpenApi.dll
+c:\Users\linti\Documents\Projects\GameStore\GameStore\bin\Debug\net8.0\MinimalApis.Extensions.dll
+c:\Users\linti\Documents\Projects\GameStore\GameStore\bin\Debug\net8.0\MiniValidation.dll
+c:\Users\linti\Documents\Projects\GameStore\GameStore\obj\Debug\net8.0\GameStore.csproj.AssemblyReference.cache
+c:\Users\linti\Documents\Projects\GameStore\GameStore\obj\Debug\net8.0\GameStore.MvcApplicationPartsAssemblyInfo.cs
+c:\Users\linti\Documents\Projects\GameStore\GameStore\obj\Debug\net8.0\GameStore.csproj.Up2Date

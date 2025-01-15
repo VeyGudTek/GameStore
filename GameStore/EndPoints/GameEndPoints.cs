@@ -24,20 +24,22 @@ public static class GameEndPoints
         )
     ];
 
-    public static WebApplication MapGamesEndPoints(this WebApplication app)
+    public static RouteGroupBuilder MapGamesEndPoints(this WebApplication app)
     {
+        var group = app.MapGroup("games");
+
         //Get Games /games
-        app.MapGet("/games", () => games);
+        group.MapGet("/", () => games);
 
         //Get Game by ID  /games/<int:id>
-        app.MapGet("/games/{id}", (int id) => {
+        group.MapGet("/{id}", (int id) => {
             GameDto? game = games.Find((game) => game.id == id);
             return game is null ? Results.NotFound() : Results.Ok(game);
             })
             .WithName(GetGameEndPointName);
 
         //Post Game /games
-        app.MapPost("games", (CreateGameDto newGame) => {
+        group.MapPost("/", (CreateGameDto newGame) => {
             GameDto game = new(
                 games.Count + 1,
                 newGame.name,
@@ -52,7 +54,7 @@ public static class GameEndPoints
         });
 
         //Put Game /games/<int:id>
-        app.MapPut("/games/{id}", (int id, UpdateGameDto updated_game) => {
+        group.MapPut("/{id}", (int id, UpdateGameDto updated_game) => {
             var index = games.FindIndex((game) => game.id == id);
 
             if (index == -1)
@@ -72,12 +74,12 @@ public static class GameEndPoints
         });
 
         //Delete Game /games/<int:id>
-        app.MapDelete("games/{id}", (int id) => {
+        group.MapDelete("/{id}", (int id) => {
             games.RemoveAll((game) => game.id == id);
 
             return Results.NoContent();
         });
 
-        return app;
+        return group;
     }
 }

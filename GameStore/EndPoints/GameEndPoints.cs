@@ -50,21 +50,16 @@ public static class GameEndPoints
         });
 
         //Put Game /games/<int:id>
-        group.MapPut("/{id}", (int id, UpdateGameDto updated_game) => {
-            var index = games.FindIndex((game) => game.id == id);
+        group.MapPut("/{id}", (int id, UpdateGameDto updated_game, GameStoreContext dbContext) => {
+            var existingGame = dbContext.games.Find(id);
 
-            if (index == -1)
+            if (existingGame == null)
             {
                 return Results.NotFound();
             }
 
-            games[index] = new GameSummaryDto(
-                id,
-                updated_game.name,
-                updated_game.genre,
-                updated_game.price,
-                updated_game.release_date
-                );
+            dbContext.Entry(existingGame).CurrentValues.SetValues(updated_game.ToEntity(id));
+            dbContext.SaveChanges();
 
             return Results.NoContent();
         });

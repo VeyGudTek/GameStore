@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lPs0vTC23+c=",
+  "dgSpecHash": "tJY/3L3G260=",
   "success": true,
-  "projectFilePath": "C:\\Users\\linti\\Documents\\Projects\\GameStore\\GameStore\\GameStore.csproj",
+  "projectFilePath": "c:\\Users\\linti\\Documents\\Projects\\GameStore\\GameStore\\GameStore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\linti\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\linti\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",

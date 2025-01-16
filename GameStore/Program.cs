@@ -9,5 +9,6 @@ builder.Services.AddDbContextPool<GameStoreContext>(opt => opt.UseNpgsql(builder
 var app = builder.Build();
 
 app.MapGamesEndPoints();
+app.migrateDB();
 
 app.Run();

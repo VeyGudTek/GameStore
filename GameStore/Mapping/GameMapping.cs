@@ -16,12 +16,23 @@ public static class GameMapping
         };
     }
 
-    public static GameDto ToDTO(this Game game)
+    public static GameSummaryDto ToGameSummaryDTO(this Game game)
     {
         return new (
             game.id,
             game.name,
             game.genre!.name,
+            game.price,
+            game.release_date
+        );
+    }
+
+    public static GameDetailsDto ToGameDetailsDTO(this Game game)
+    {
+        return new (
+            game.id,
+            game.name,
+            game.genreId,
             game.price,
             game.release_date
         );

@@ -1,9 +1,9 @@
 namespace GameStore.Dtos;
 
-public record class GameSummaryDto(
+public record class GameDetailsDto(
     int id, 
     string name, 
-    string genre, 
+    int genre_id, 
     decimal price, 
     DateOnly release_date
     );

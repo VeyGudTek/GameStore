@@ -3,34 +3,23 @@ using GameStore.Data;
 using GameStore.Dtos;
 using GameStore.Entities;
 using GameStore.Mapping;
+using Microsoft.EntityFrameworkCore;
 
 public static class GameEndPoints
 {
     const string GetGameEndPointName = "GetGame";
-
-    private static readonly List<GameSummaryDto> games = [
-        new(
-            1,
-            "Bob's Adventure",
-            "action",
-            17.00M,
-            new DateOnly(2011, 2, 2)
-        ),
-            new(
-            2,
-            "Joe's Revolution",
-            "fantasy",
-            2.21M,
-            new DateOnly(1990, 10, 5)
-        )
-    ];
 
     public static RouteGroupBuilder MapGamesEndPoints(this WebApplication app)
     {
         var group = app.MapGroup("games").WithParameterValidation();
 
         //Get Games /games
-        group.MapGet("/", () => games);
+        group.MapGet("/", (GameStoreContext dbContext) => 
+            dbContext.games
+            .Include(game => game.genre)
+            .Select((game) => game.ToGameSummaryDTO())
+            .AsNoTracking()
+        );
 
         //Get Game by ID  /games/<int:id>
         group.MapGet("/{id}", (int id, GameStoreContext dbContext) => {
@@ -65,8 +54,10 @@ public static class GameEndPoints
         });
 
         //Delete Game /games/<int:id>
-        group.MapDelete("/{id}", (int id) => {
-            games.RemoveAll((game) => game.id == id);
+        group.MapDelete("/{id}", (int id, GameStoreContext dbContext) => {
+            dbContext.games
+            .Where((game) => game.id == id)
+            .ExecuteDelete();
 
             return Results.NoContent();
         });

@@ -1,9 +1,8 @@
 namespace GameStore.EndPoints;
-using GameStore.CreateGameDto;
 using GameStore.Data;
 using GameStore.Dtos;
 using GameStore.Entities;
-using GameStore.UpdateGameDto;
+using GameStore.Mapping;
 
 public static class GameEndPoints
 {
@@ -42,27 +41,13 @@ public static class GameEndPoints
 
         //Post Game /games
         group.MapPost("/", (CreateGameDto newGame, GameStoreContext dbContext) => {
-            Game game = new()
-            {
-                name = newGame.name,
-                genre = dbContext.genres.Find(newGame.genre_id),
-                genreId = newGame.genre_id,
-                price = newGame.price,
-                release_date = newGame.release_date
-            };
+            Game game = newGame.ToEntity();
+            game.genre = dbContext.genres.Find(newGame.genre_id);
 
             dbContext.games.Add(game);
             dbContext.SaveChanges();
 
-            GameDto gamedto = new(
-                game.id,
-                game.name,
-                game.genre!.name,
-                game.price,
-                game.release_date
-            );
-
-            return Results.CreatedAtRoute(GetGameEndPointName, new {id = game.id}, gamedto);
+            return Results.CreatedAtRoute(GetGameEndPointName, new {id = game.id}, game.ToDTO());
         });
 
         //Put Game /games/<int:id>

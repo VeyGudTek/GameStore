@@ -7,6 +7,7 @@ public class GameStoreContext(DbContextOptions<GameStoreContext> options) :DbCon
 {
     public DbSet<Game> games => Set<Game>();
     public DbSet<Genre> genres => Set<Genre>();
+    public DbSet<Blog> blogs => Set<Blog>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

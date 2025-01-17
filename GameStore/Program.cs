@@ -10,6 +10,7 @@ var app = builder.Build();
 
 app.MapGamesEndPoints();
 app.MapGenreEndpoints();
+app.MapBlogEndPoints();
 await app.migrateDBAsync();
 
 app.Run();

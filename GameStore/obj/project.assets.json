@@ -2999,11 +2999,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\linti\\Documents\\Projects\\GameStore\\GameStore\\GameStore.csproj",
+      "projectUniqueName": "C:\\Users\\linti\\documents\\projects\\gamestore\\gamestore\\GameStore.csproj",
       "projectName": "GameStore",
-      "projectPath": "C:\\Users\\linti\\Documents\\Projects\\GameStore\\GameStore\\GameStore.csproj",
+      "projectPath": "C:\\Users\\linti\\documents\\projects\\gamestore\\gamestore\\GameStore.csproj",
       "packagesPath": "C:\\Users\\linti\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\linti\\Documents\\Projects\\GameStore\\GameStore\\obj\\",
+      "outputPath": "C:\\Users\\linti\\documents\\projects\\gamestore\\gamestore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\linti\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -3072,5 +3072,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json."
+    }
+  ]
 }

@@ -9,6 +9,7 @@ builder.Services.AddDbContextPool<GameStoreContext>(opt => opt.UseNpgsql(builder
 var app = builder.Build();
 
 app.MapGamesEndPoints();
+app.MapGenreEndpoints();
 await app.migrateDBAsync();
 
 app.Run();

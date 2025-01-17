@@ -33,4 +33,14 @@ public static class BlogMapping
             blog.body
         );
     }
+
+    public static Blog toBlogEntity(this UpdateBlogDto blog, int id, string author)
+    {
+        return new Blog(){
+            id = id,
+            title = blog.title,
+            author = author,
+            body = blog.body
+        };
+    }
 }

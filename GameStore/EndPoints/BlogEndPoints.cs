@@ -35,6 +35,19 @@ public static class BlogEndPoints
         }
         );
 
+        group.MapPut("/{id}", async (int id, UpdateBlogDto new_blog, GameStoreContext dbContext) => {
+            var blog = await dbContext.blogs.FindAsync(id);
+            if (blog == null)
+            {
+                return Results.NotFound();
+            }
+
+            dbContext.Entry(blog).CurrentValues.SetValues(new_blog.toBlogEntity(id, blog.author));
+            await dbContext.SaveChangesAsync();
+
+            return Results.NoContent();
+        });
+
         group.MapDelete("/{id}", async (int id, GameStoreContext dbContext) => {
             await dbContext.blogs
             .Where((game) => game.id == id)

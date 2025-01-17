@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\linti\\documents\\projects\\gamestore\\gamestore\\GameStore.csproj": {}
+    "c:\\Users\\linti\\Documents\\Projects\\GameStore\\GameStore\\GameStore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\linti\\documents\\projects\\gamestore\\gamestore\\GameStore.csproj": {
+    "c:\\Users\\linti\\Documents\\Projects\\GameStore\\GameStore\\GameStore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\linti\\documents\\projects\\gamestore\\gamestore\\GameStore.csproj",
+        "projectUniqueName": "c:\\Users\\linti\\Documents\\Projects\\GameStore\\GameStore\\GameStore.csproj",
         "projectName": "GameStore",
-        "projectPath": "C:\\Users\\linti\\documents\\projects\\gamestore\\gamestore\\GameStore.csproj",
+        "projectPath": "c:\\Users\\linti\\Documents\\Projects\\GameStore\\GameStore\\GameStore.csproj",
         "packagesPath": "C:\\Users\\linti\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\linti\\documents\\projects\\gamestore\\gamestore\\obj\\",
+        "outputPath": "c:\\Users\\linti\\Documents\\Projects\\GameStore\\GameStore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\linti\\AppData\\Roaming\\NuGet\\NuGet.Config"
